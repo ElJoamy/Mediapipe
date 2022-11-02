@@ -9,8 +9,8 @@ VISUALIZE_FACE_POINTS = False
 
 filters_config = {
     'anonymous':
-        [{'path': "filters/anonymous.png",
-          'anno_path': "filters/anonymous_annotations.csv",
+        [{'path': "assets/anonymous.png",
+          'anno_path': "assets/anonymous_annotations.csv",
           'morph': True, 'animated': False, 'has_alpha': True}],
     'anime':
         [{'path': "filters/anime.png",
