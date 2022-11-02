@@ -14,10 +14,10 @@ filters_config = {
           'morph': True, 'animated': False, 'has_alpha': True}],
     'cat':
         [{'path': "assets/cat-ears.png",
-          'anno_path': "assets/cat_ears_annotations.csv",
+          'anno_path': "assets/cat-ears_annotations.csv",
           'morph': False, 'animated': False, 'has_alpha': True},
          {'path': "assets/cat-nose.png",
-          'anno_path': "assets/cat_nose_annotations.csv",
+          'anno_path': "assets/cat-nose_annotations.csv",
           'morph': False, 'animated': False, 'has_alpha': True}],
     'anime':
         [{'path': "assets/anime.png",
