@@ -12,21 +12,6 @@ filters_config = {
         [{'path': "assets/anonymous.png",
           'anno_path': "assets/anonymous_annotations.csv",
           'morph': True, 'animated': False, 'has_alpha': True}],
-    'jason-joker':
-        [{'path': "assets/jason-joker.png",
-          'anno_path': "assets/jason-joker_annotations.csv",
-          'morph': True, 'animated': False, 'has_alpha': True}],
-    'cat':
-        [{'path': "assets/cat-ears.png",
-          'anno_path': "assets/cat-ears_annotations.csv",
-          'morph': False, 'animated': False, 'has_alpha': True},
-         {'path': "assets/cat-nose.png",
-          'anno_path': "assets/cat-nose_annotations.csv",
-          'morph': False, 'animated': False, 'has_alpha': True}],
-    'green-carnival':
-        [{'path': "assets/green-carnival.png",
-            'anno_path': "assets/green-carnival_annotations.csv",
-            'morph': True, 'animated': False, 'has_alpha': True}],
     'anime':
         [{'path': "assets/anime.png",
           'anno_path': "assets/anime_annotations.csv",
@@ -38,6 +23,10 @@ filters_config = {
          {'path': "assets/dog-nose.png",
           'anno_path': "assets/dog-nose_annotations.csv",
           'morph': False, 'animated': False, 'has_alpha': True}],
+    'jason-joker':
+        [{'path': "assets/jason-joker.png",
+          'anno_path': "assets/jason-joker_annotations.csv",
+          'morph': True, 'animated': False, 'has_alpha': True}],
     'gold-crown':
         [{'path': "assets/gold-crown.png",
           'anno_path': "assets/gold-crown_annotations.csv",
@@ -45,6 +34,13 @@ filters_config = {
     'flower-crown':
         [{'path': "assets/flower-crown.png",
           'anno_path': "assets/flower-crown_annotations.csv",
+          'morph': False, 'animated': False, 'has_alpha': True}],
+    'cat':
+        [{'path': "assets/cat-ears.png",
+          'anno_path': "assets/cat-ears_annotations.csv",
+          'morph': False, 'animated': False, 'has_alpha': True},
+         {'path': "assets/cat-nose.png",
+          'anno_path': "assets/cat-nose_annotations.csv",
           'morph': False, 'animated': False, 'has_alpha': True}],
 }
 
@@ -129,8 +125,7 @@ def find_convex_hull(points):
 
     return hull, hullIndex
 
-
-def load_filter(filter_name="dog"):
+def load_filter(filter_name = "dog" or "cat"):
 
     filters = filters_config[filter_name]
 
@@ -299,8 +294,6 @@ while True:
             frame = output = np.uint8(output)
 
         cv2.putText(frame, "Press F to change filters", (10, 20), cv2.FONT_HERSHEY_SIMPLEX, .5, (255, 0, 0), 1)
-        #press SPACE to save the image
-        cv2.putText(frame, "Press SPACE to save the image", (10, 40), cv2.FONT_HERSHEY_SIMPLEX, .5, (255, 0, 0), 1)
 
         cv2.imshow("Face Filter", output)
 
@@ -314,10 +307,6 @@ while True:
             except:
                 iter_filter_keys = iter(filters_config.keys())
                 filters, multi_filter_runtime = load_filter(next(iter_filter_keys))
-        # Save the image if 'space' is pressed
-        elif keypressed == ord(' '):
-            cv2.imwrite('output.jpg', output)
-            
 
         count += 1
 
