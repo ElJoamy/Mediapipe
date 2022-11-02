@@ -315,16 +315,9 @@ while True:
                 filters, multi_filter_runtime = load_filter(next(iter_filter_keys))
         # Save the image if 'space' is pressed
         elif keypressed == ord(' '):
-<<<<<<< HEAD
             cv2.imwrite("Pictures/" + str(next(iter_filter_keys)) + str(count + 1) + ".jpg", output)
-            
-=======
-            # Save the image with the current filter applied to the Pictures folder more than 1 filter is applied, the image will be saved with the name of the last filter applied with a incrementing number
-            #cv2.imwrite("Pictures/" + str(filters[-1]['name']) + str(image_number) + ".jpg", output)
-            cv2.imwrite("Pictures/" + str(next(iter_filter_keys)) + str(count + 1) + ".jpg", output)
-            #cv2.imwrite("Pictures/" + str(next(iter_filter_keys)) + ".jpg", output)
->>>>>>> c8b63ffd96364c6e95e6f4cae168cb1a95840330
-
+        
+        
         count += 1
 
 cap.release()
