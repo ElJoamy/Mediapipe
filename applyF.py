@@ -163,9 +163,45 @@ def load_filter(filter_name = "cat" or "dog"):
             filter_cap = cv2.VideoCapture(filter['path'])
             temp_dict['cap'] = filter_cap
 
+            
+            
+
+
         multi_filter_runtime.append(temp_dict)
 
     return filters, multi_filter_runtime
+
+#add a tongue gif when the user smiles
+def add_tongue(img, landmarks, tongue_img, tongue_alpha, tongue_points, tongue_hull, tongue_hullIndex, tongue_dt):
+    # Find convex hull for tongue
+    tongue_hull, tongue_hullIndex = find_convex_hull(tongue_points)
+
+    # Find Delaunay triangulation for tongue
+    sizeImg1 = tongue_img.shape
+    rect = (0, 0, sizeImg1[1], sizeImg1[0])
+    tongue_dt = fbc.calculateDelaunayTriangles(rect, tongue_hull)
+
+    # Apply affine transformation to Delaunay triangles
+    for i in range(0, len(tongue_dt)):
+        t1 = []
+        t2 = []
+
+        # Get points for img1, img2 corresponding to the triangles
+        for j in range(0, 3):
+            t1.append(tongue_hull[tongue_dt[i][j]])
+            t2.append(landmarks[tongue_dt[i][j]])
+
+        fbc.warpTriangle(tongue_img, img, t1, t2)
+
+    # Calculate mask
+    mask = np.zeros(img.shape, dtype=img.dtype)
+    fbc.fillConvexPoly(mask, np.int32(tongue_hull), (255, 255, 255))
+
+    # Clone seamlessly.
+    output = cv2.seamlessClone(np.uint8(img), img, mask, (landmarks[0][0], landmarks[0][1]), cv2.NORMAL_CLONE)
+
+    return output
+
 
 
 # process input from webcam or video file
