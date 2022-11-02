@@ -130,8 +130,7 @@ def find_convex_hull(points):
     return hull, hullIndex
 
 
-def load_filter(filter_name="dog"):
-
+def load_filter(filter_name="dog" or "cat"): 
     filters = filters_config[filter_name]
 
     multi_filter_runtime = []
@@ -316,7 +315,7 @@ while True:
                 filters, multi_filter_runtime = load_filter(next(iter_filter_keys))
         # Save the image if 'space' is pressed
         elif keypressed == ord(' '):
-            cv2.imwrite('output.jpg', output)
+            cv2.imwrite("Pictures/" + str(next(iter_filter_keys)) + str(count + 1) + ".jpg", output)
             
 
         count += 1
