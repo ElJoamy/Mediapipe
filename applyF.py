@@ -125,7 +125,7 @@ def find_convex_hull(points):
 
     return hull, hullIndex
 
-def load_filter(filter_name = "dog" or "cat"):
+def load_filter(filter_name = "cat" or "dog"):
 
     filters = filters_config[filter_name]
 
