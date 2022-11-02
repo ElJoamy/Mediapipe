@@ -12,7 +12,6 @@ filters_config = {
         [{'path': "assets/anonymous.png",
           'anno_path': "assets/anonymous_annotations.csv",
           'morph': True, 'animated': False, 'has_alpha': True}],
-<<<<<<< HEAD
     'jason-joker':
         [{'path': "assets/jason-joker.png",
           'anno_path': "assets/jason-joker_annotations.csv",
@@ -21,7 +20,6 @@ filters_config = {
         [{'path': "assets/green-carnival.png",
             'anno_path': "assets/green-carnival_annotations.csv",
             'morph': True, 'animated': False, 'has_alpha': True}],
-=======
     'cat':
         [{'path': "assets/cat-ears.png",
           'anno_path': "assets/cat-ears_annotations.csv",
@@ -39,23 +37,12 @@ filters_config = {
           'morph': False, 'animated': False, 'has_alpha': True},
          {'path': "assets/dog-nose.png",
           'anno_path': "assets/dog-nose_annotations.csv",
-<<<<<<< HEAD
-          'morph': False, 'animated': False, 'has_alpha': True}],
-    'cat':
-        [{'path': "assets/cat-ears.png",
-          'anno_path': "assets/cat-ears_annotations.csv",
-          'morph': False, 'animated': False, 'has_alpha': True},
-         {'path': "assets/cat-nose.png",
-          'anno_path': "assets/cat-nose_annotations.csv",
-          'morph': False, 'animated': False, 'has_alpha': True}],
-=======
           'morph': False, 'animated': False, 'has_alpha': True}],
     
     'jason-joker':
         [{'path': "assets/jason-joker.png",
           'anno_path': "assets/jason-joker_annotations.csv",
           'morph': True, 'animated': False, 'has_alpha': True}],
->>>>>>> 2b325fe1fb5637230908a72544166e9d6119773e
     'gold-crown':
         [{'path': "assets/gold-crown.png",
           'anno_path': "assets/gold-crown_annotations.csv",
