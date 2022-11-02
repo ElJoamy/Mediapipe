@@ -1,3 +1,6 @@
+import datetime
+import os
+from tkinter import Image
 import mediapipe as mp
 import cv2
 import math
@@ -12,6 +15,10 @@ filters_config = {
         [{'path': "assets/anonymous.png",
           'anno_path': "annotations/anonymous_annotations.csv",
           'morph': True, 'animated': False, 'has_alpha': True}],
+    'squid-game':
+        [{'path': "assets/Squid-Game-Front-Man-Mask.png",
+            'anno_path': "annotations/squid-game_annotations.csv",
+            'morph': True, 'animated': False, 'has_alpha': True}],
     'anime':
         [{'path': "assets/anime.png",
           'anno_path': "annotations/anime_annotations.csv",
@@ -19,10 +26,10 @@ filters_config = {
     'dog':
         [{'path': "assets/dog-ears.png",
           'anno_path': "annotations/dog-ears_annotations.csv",
-          'morph': False, 'animated': False, 'has_alpha': True},
+          'morph': False, 'animated': True, 'has_alpha': True},
          {'path': "assets/dog-nose.png",
           'anno_path': "annotations/dog-nose_annotations.csv",
-          'morph': False, 'animated': False, 'has_alpha': True}],
+          'morph': False, 'animated': True, 'has_alpha': True}],
     'jason-joker':
         [{'path': "assets/jason-joker.png",
           'anno_path': "annotations/jason-joker_annotations.csv",
@@ -43,7 +50,6 @@ filters_config = {
           'anno_path': "annotations/cat-nose_annotations.csv",
           'morph': False, 'animated': False, 'has_alpha': True}],
 }
-
 
 # detect facial landmarks in image
 def getLandmarks(img):
@@ -125,7 +131,7 @@ def find_convex_hull(points):
 
     return hull, hullIndex
 
-def load_filter(filter_name = "cat" or "dog"):
+def load_filter(filter_name = "dog" or "cat"):
 
     filters = filters_config[filter_name]
 
@@ -309,9 +315,17 @@ while True:
             except:
                 iter_filter_keys = iter(filters_config.keys())
                 filters, multi_filter_runtime = load_filter(next(iter_filter_keys))
-        # Save the image if 'space' is pressed
+        # Save multiple images if 'space' is pressed
         elif keypressed == ord(' '):
-            cv2.imwrite("Pictures/" + str(next(iter_filter_keys)) + str(count + 1) + ".jpg", output)
+            #save image in the folder Screenshots 
+            cv2.imwrite("Screenshots/multiples/{}.png".format(datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")), output)
+            print("Image saved")
+            
+            #only one image is saved
+            cv2.imwrite('Screenshots/pruebas/image'+str(i)+'.jpg', frame)
+            i+=1
+            
+            
         
         
         count += 1
