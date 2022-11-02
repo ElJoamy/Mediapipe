@@ -10,37 +10,37 @@ VISUALIZE_FACE_POINTS = False
 filters_config = {
     'anonymous':
         [{'path': "assets/anonymous.png",
-          'anno_path': "assets/anonymous_annotations.csv",
+          'anno_path': "annotations/anonymous_annotations.csv",
           'morph': True, 'animated': False, 'has_alpha': True}],
     'anime':
         [{'path': "assets/anime.png",
-          'anno_path': "assets/anime_annotations.csv",
+          'anno_path': "annotations/anime_annotations.csv",
           'morph': True, 'animated': False, 'has_alpha': True}],
     'dog':
         [{'path': "assets/dog-ears.png",
-          'anno_path': "assets/dog-ears_annotations.csv",
+          'anno_path': "annotations/dog-ears_annotations.csv",
           'morph': False, 'animated': False, 'has_alpha': True},
          {'path': "assets/dog-nose.png",
-          'anno_path': "assets/dog-nose_annotations.csv",
+          'anno_path': "annotations/dog-nose_annotations.csv",
           'morph': False, 'animated': False, 'has_alpha': True}],
     'jason-joker':
         [{'path': "assets/jason-joker.png",
-          'anno_path': "assets/jason-joker_annotations.csv",
+          'anno_path': "annotations/jason-joker_annotations.csv",
           'morph': True, 'animated': False, 'has_alpha': True}],
     'gold-crown':
         [{'path': "assets/gold-crown.png",
-          'anno_path': "assets/gold-crown_annotations.csv",
+          'anno_path': "annotations/gold-crown_annotations.csv",
           'morph': False, 'animated': False, 'has_alpha': True}],
     'flower-crown':
         [{'path': "assets/flower-crown.png",
-          'anno_path': "assets/flower-crown_annotations.csv",
+          'anno_path': "annotations/flower-crown_annotations.csv",
           'morph': False, 'animated': False, 'has_alpha': True}],
     'cat':
         [{'path': "assets/cat-ears.png",
-          'anno_path': "assets/cat-ears_annotations.csv",
+          'anno_path': "annotations/cat-ears_annotations.csv",
           'morph': False, 'animated': False, 'has_alpha': True},
          {'path': "assets/cat-nose.png",
-          'anno_path': "assets/cat-nose_annotations.csv",
+          'anno_path': "annotations/cat-nose_annotations.csv",
           'morph': False, 'animated': False, 'has_alpha': True}],
 }
 
