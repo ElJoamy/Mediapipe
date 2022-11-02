@@ -29,7 +29,6 @@ filters_config = {
          {'path': "assets/cat-nose.png",
           'anno_path': "assets/cat-nose_annotations.csv",
           'morph': False, 'animated': False, 'has_alpha': True}],
->>>>>>> 2b325fe1fb5637230908a72544166e9d6119773e
     'anime':
         [{'path': "assets/anime.png",
           'anno_path': "assets/anime_annotations.csv",
