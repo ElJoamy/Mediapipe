@@ -12,35 +12,39 @@ filters_config = {
         [{'path': "assets/anonymous.png",
           'anno_path': "assets/anonymous_annotations.csv",
           'morph': True, 'animated': False, 'has_alpha': True}],
+    'jason-joker':
+        [{'path': "assets/jason-joker.png",
+          'anno_path': "assets/jason-joker_annotations.csv",
+          'morph': True, 'animated': False, 'has_alpha': True}],
+    'green-carnival':
+        [{'path': "assets/green-carnival.png",
+            'anno_path': "assets/green-carnival_annotations.csv",
+            'morph': True, 'animated': False, 'has_alpha': True}],
     'anime':
-        [{'path': "filters/anime.png",
-          'anno_path': "filters/anime_annotations.csv",
+        [{'path': "assets/anime.png",
+          'anno_path': "assets/anime_annotations.csv",
           'morph': True, 'animated': False, 'has_alpha': True}],
     'dog':
-        [{'path': "filters/dog-ears.png",
-          'anno_path': "filters/dog-ears_annotations.csv",
+        [{'path': "assets/dog-ears.png",
+          'anno_path': "assets/dog-ears_annotations.csv",
           'morph': False, 'animated': False, 'has_alpha': True},
-         {'path': "filters/dog-nose.png",
-          'anno_path': "filters/dog-nose_annotations.csv",
+         {'path': "assets/dog-nose.png",
+          'anno_path': "assets/dog-nose_annotations.csv",
           'morph': False, 'animated': False, 'has_alpha': True}],
     'cat':
-        [{'path': "filters/cat-ears.png",
-          'anno_path': "filters/cat-ears_annotations.csv",
+        [{'path': "assets/cat-ears.png",
+          'anno_path': "assets/cat-ears_annotations.csv",
           'morph': False, 'animated': False, 'has_alpha': True},
-         {'path': "filters/cat-nose.png",
-          'anno_path': "filters/cat-nose_annotations.csv",
+         {'path': "assets/cat-nose.png",
+          'anno_path': "assets/cat-nose_annotations.csv",
           'morph': False, 'animated': False, 'has_alpha': True}],
-    'jason-joker':
-        [{'path': "filters/jason-joker.png",
-          'anno_path': "filters/jason-joker_annotations.csv",
-          'morph': True, 'animated': False, 'has_alpha': True}],
     'gold-crown':
-        [{'path': "filters/gold-crown.png",
-          'anno_path': "filters/gold-crown_annotations.csv",
+        [{'path': "assets/gold-crown.png",
+          'anno_path': "assets/gold-crown_annotations.csv",
           'morph': False, 'animated': False, 'has_alpha': True}],
     'flower-crown':
-        [{'path': "filters/flower-crown.png",
-          'anno_path': "filters/flower-crown_annotations.csv",
+        [{'path': "assets/flower-crown.png",
+          'anno_path': "assets/flower-crown_annotations.csv",
           'morph': False, 'animated': False, 'has_alpha': True}],
 }
 
@@ -294,7 +298,7 @@ while True:
 
             frame = output = np.uint8(output)
 
-        cv2.putText(frame, "Press F to change filters", (10, 20), cv2.FONT_HERSHEY_SIMPLEX, .5, (255, 0, 0), 1)
+        cv2.putText(frame, "Press F to change filters", (10, 20), cv2.FONT_HERSHEY_SIMPLEX, .5, (255, 0, 0), 1) 
 
         cv2.imshow("Face Filter", output)
 
