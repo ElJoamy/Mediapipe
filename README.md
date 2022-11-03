@@ -16,7 +16,7 @@
     Certainly, we use the OpenCV library to detect the face and emotion
     We use the mediapipe library to detect the face and put a filter on it
 
-    ## Architectury
+## Architectury
         the project has 3 specifics folders
         1. Annotations
             This folder contains the annotations of the images used to put the filters on the face
