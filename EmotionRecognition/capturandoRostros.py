@@ -7,7 +7,7 @@ emotionName = 'Enojo'
 #emotionName = 'Sorpresa'
 #emotionName = 'Tristeza'
 
-dataPath = 'EmotionRecognition/Data' #Cambia a la ruta donde hayas almacenado Data
+dataPath = 'EmotionRecognition/Data' 
 emotionsPath = dataPath + '/' + emotionName
 
 if not os.path.exists(emotionsPath):
