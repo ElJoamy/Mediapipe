@@ -41,7 +41,7 @@ def warpTriangle(img1, img2, tri1, tri2) :
 if __name__ == '__main__' :
 
     # Read input image
-    imgIn = cv2.imread("recortarImagen/robot.jpg")
+    imgIn = cv2.imread("Screenshots/multiples/2022-11-02_23-12-16.png")
     
     # Output image is set to white
     imgOut = 255 * np.ones(imgIn.shape, dtype = imgIn.dtype)

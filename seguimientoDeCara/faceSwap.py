@@ -122,17 +122,10 @@ def warpTriangle(img1, img2, t1, t2) :
     
 
 if __name__ == '__main__' :
-    
-    # Make sure OpenCV is version 3.0 or above
-    (major_ver, minor_ver, subminor_ver) = (cv2.__version__).split('.')
-
-    if int(major_ver) < 3 :
-        print >>sys.stderr, 'ERROR: Script needs OpenCV 3.0 or higher'
-        sys.exit(1)
 
     # Read images
-    filename1 = 'seguimientoDeCara/ted_cruz.jpg'
-    filename2 = 'seguimientoDeCara/donald_trump.jpg'
+    filename1 = 'seguimientoDeCara/hillary_clinton.jpg'
+    filename2 = 'seguimientoDeCara/ted_cruz.jpg'
     
     img1 = cv2.imread(filename1);
     img2 = cv2.imread(filename2);
