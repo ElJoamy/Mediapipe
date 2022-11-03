@@ -41,9 +41,12 @@ filters_config = {
         [{'path': "assets/dog-ears.png",
           'anno_path': "annotations/dog-ears_annotations.csv",
           'morph': False, 'animated': False, 'has_alpha': True},
-         {'path': "assets/dog-tongue.gif",
+         {'path': "assets/dog-nose.png",
           'anno_path': "annotations/dog-nose_annotations.csv",
-          'morph': False, 'animated': True, 'has_alpha': True}],
+          'morph': False, 'animated': False, 'has_alpha': True},
+         {'path': "assets/dog-tongue.png",
+          'anno_path': "annotations/dog-tongue_annotations.csv",
+            'morph': False, 'animated': True, 'has_alpha': True}],
 }
 
 # detect facial landmarks in image
