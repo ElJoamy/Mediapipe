@@ -4,7 +4,7 @@ from tkinter import *
 window=Tk()
 
 window.title('Media Pipe')
-window.geometry("300x200+10+10")
+window.geometry("300x200")
 
 # bg = PhotoImage( file = 'assets/anime.png')
 

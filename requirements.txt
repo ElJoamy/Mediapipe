@@ -1,0 +1,8 @@
+mediapipe==0.8.9.1
+numpy==1.21.5
+cv2==4.5.4
+math==1.0.1
+csv==1.0
+os==1.0.1
+time==1.0.1
+imutils==0.5.4

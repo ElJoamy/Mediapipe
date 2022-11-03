@@ -4,9 +4,9 @@ import numpy as np
 import time
 
 def obtenerModelo(method,facesData,labels):
-	if method == 'EigenFaces': emotion_recognizer = cv2.face.EigenFaceRecognizer_create()
-	if method == 'FisherFaces': emotion_recognizer = cv2.face.FisherFaceRecognizer_create()
-	if method == 'LBPH': emotion_recognizer = cv2.face.LBPHFaceRecognizer_create()
+	if method == 'EigenFaces': emotion_recognizer = cv2.face.EigenFaceRecognizer_create() #This method is for face recognition using EigenFaces algorithm that is based on the PCA (Principal Component Analysis) technique.
+	if method == 'FisherFaces': emotion_recognizer = cv2.face.FisherFaceRecognizer_create()#This method is for face recognition using FisherFaces algorithm that is based on the LDA (Linear Discriminant Analysis) technique.
+	if method == 'LBPH': emotion_recognizer = cv2.face.LBPHFaceRecognizer_create()#This method is for face recognition using Local Binary Patterns Histograms (LBPH) algorithm that is based on the Histogram of Oriented Gradients (HOG) technique.
 
 	# Entrenando el reconocedor de rostros
 	print("Entrenando ( "+method+" )...")
@@ -16,7 +16,7 @@ def obtenerModelo(method,facesData,labels):
 	print("Tiempo de entrenamiento ( "+method+" ): ", tiempoEntrenamiento)
 
 	# Almacenando el modelo obtenido
-	emotion_recognizer.write("ReconocimientoEmociones/Models/modelo"+method+".xml")
+	emotion_recognizer.write("EmotionRecognition/Models/modelo"+method+".xml")
 
 dataPath = 'EmotionRecognition/Data' #Cambia a la ruta donde hayas almacenado Data
 emotionsList = os.listdir(dataPath)
