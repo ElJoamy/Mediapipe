@@ -20,13 +20,11 @@ if method == 'FisherFaces': emotion_recognizer = cv2.face.FisherFaceRecognizer_c
 if method == 'LBPH': emotion_recognizer = cv2.face.LBPHFaceRecognizer_create()
 
 
-#emotion_recognizer.read('modelo'+method+'.xml')
-#do the same for the other methods but using de models of the carpet ReconocimientoEmociones/models/'modelo'+method+'.xml'
 emotion_recognizer.read('EmotionRecognition/Models/modelo'+method+'.xml')
 
 # --------------------------------------------------------------------------------
 
-dataPath = 'EmotionRecognition/Data' #Cambia a la ruta donde hayas almacenado Data
+dataPath = 'EmotionRecognition/Data' 
 imagePaths = os.listdir(dataPath)
 print('imagePaths=',imagePaths)
 
