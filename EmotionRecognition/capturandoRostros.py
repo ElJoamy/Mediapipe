@@ -2,12 +2,12 @@ import cv2
 import os
 import imutils
 
-#emotionName = 'Enojo'
+emotionName = 'Enojo'
 #emotionName = 'Felicidad'
 #emotionName = 'Sorpresa'
-emotionName = 'Tristeza'
+#emotionName = 'Tristeza'
 
-dataPath = 'C:/Users/Cami/Desktop/PROYECTOFINAL/Mediapipe/ReconocimientoEmociones/Data' #Cambia a la ruta donde hayas almacenado Data
+dataPath = 'EmotionRecognition/Data' #Cambia a la ruta donde hayas almacenado Data
 emotionsPath = dataPath + '/' + emotionName
 
 if not os.path.exists(emotionsPath):

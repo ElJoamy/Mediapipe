@@ -4,10 +4,10 @@ import numpy as np
 
 def emotionImage(emotion):
 	# Emojis
-	if emotion == 'Felicidad': image = cv2.imread('Emojis/felicidad.jpeg')
-	if emotion == 'Enojo': image = cv2.imread('Emojis/enojo.jpeg')
-	if emotion == 'Sorpresa': image = cv2.imread('Emojis/sorpresa.jpeg')
-	if emotion == 'Tristeza': image = cv2.imread('Emojis/tristeza.jpeg')
+	if emotion == 'Felicidad': image = cv2.imread('EmotionRecognition/Emojis/felicidad.jpeg')
+	if emotion == 'Enojo': image = cv2.imread('EmotionRecognition/Emojis/enojo.jpeg')
+	if emotion == 'Sorpresa': image = cv2.imread('EmotionRecognition/Emojis/sorpresa.jpeg')
+	if emotion == 'Tristeza': image = cv2.imread('EmotionRecognition/Emojis/tristeza.jpeg')
 	return image
 
 # ----------- Métodos usados para el entrenamiento y lectura del modelo ----------
@@ -19,10 +19,14 @@ if method == 'EigenFaces': emotion_recognizer = cv2.face.EigenFaceRecognizer_cre
 if method == 'FisherFaces': emotion_recognizer = cv2.face.FisherFaceRecognizer_create()
 if method == 'LBPH': emotion_recognizer = cv2.face.LBPHFaceRecognizer_create()
 
-emotion_recognizer.read('modelo'+method+'.xml')
+
+#emotion_recognizer.read('modelo'+method+'.xml')
+#do the same for the other methods but using de models of the carpet ReconocimientoEmociones/models/'modelo'+method+'.xml'
+emotion_recognizer.read('EmotionRecognition/Models/modelo'+method+'.xml')
+
 # --------------------------------------------------------------------------------
 
-dataPath = 'C:/Users/Cami/Desktop/PROYECTOFINAL/Mediapipe/ReconocimientoEmociones/Data' #Cambia a la ruta donde hayas almacenado Data
+dataPath = 'EmotionRecognition/Data' #Cambia a la ruta donde hayas almacenado Data
 imagePaths = os.listdir(dataPath)
 print('imagePaths=',imagePaths)
 

@@ -16,9 +16,9 @@ def obtenerModelo(method,facesData,labels):
 	print("Tiempo de entrenamiento ( "+method+" ): ", tiempoEntrenamiento)
 
 	# Almacenando el modelo obtenido
-	emotion_recognizer.write("ReconocimientoEmociones/modelo"+method+".xml")
+	emotion_recognizer.write("ReconocimientoEmociones/Models/modelo"+method+".xml")
 
-dataPath = 'C:/Users/Cami/Desktop/PROYECTOFINAL/Mediapipe/ReconocimientoEmociones/Data' #Cambia a la ruta donde hayas almacenado Data
+dataPath = 'EmotionRecognition/Data' #Cambia a la ruta donde hayas almacenado Data
 emotionsList = os.listdir(dataPath)
 print('Lista de personas: ', emotionsList)
 
