@@ -7,6 +7,7 @@ import faceBlendCommon as fbc
 import csv
 
 VISUALIZE_FACE_POINTS = False
+gb_zoom = 1.4
 
 filters_config = {
     'anonymous':
@@ -17,13 +18,6 @@ filters_config = {
         [{'path': "assets/anime.png",
           'anno_path': "annotations/anime_annotations.csv",
           'morph': True, 'animated': False, 'has_alpha': True}],
-    'dog':
-        [{'path': "assets/dog-ears.png",
-          'anno_path': "annotations/dog-ears_annotations.csv",
-          'morph': False, 'animated': True, 'has_alpha': True},
-         {'path': "assets/dog-nose.png",
-          'anno_path': "annotations/dog-nose_annotations.csv",
-          'morph': False, 'animated': True, 'has_alpha': True}],
     'jason-joker':
         [{'path': "assets/jason-joker.png",
           'anno_path': "annotations/jason-joker_annotations.csv",
@@ -43,6 +37,16 @@ filters_config = {
          {'path': "assets/cat-nose.png",
           'anno_path': "annotations/cat-nose_annotations.csv",
           'morph': False, 'animated': False, 'has_alpha': True}],
+    'dog':
+        [{'path': "assets/dog-ears.png",
+          'anno_path': "annotations/dog-ears_annotations.csv",
+          'morph': False, 'animated': False, 'has_alpha': True},
+         {'path': "assets/dog-nose.png",
+          'anno_path': "annotations/dog-nose_annotations.csv",
+          'morph': False, 'animated': False, 'has_alpha': True},
+         {'path': "assets/dog-tongue.png",
+          'anno_path': "annotations/dog-tongue_annotations.csv",
+            'morph': False, 'animated': True, 'has_alpha': True}],
 }
 
 # detect facial landmarks in image
@@ -163,10 +167,13 @@ def load_filter(filter_name = "dog" or "cat"):
             filter_cap = cv2.VideoCapture(filter['path'])
             temp_dict['cap'] = filter_cap
 
+
         multi_filter_runtime.append(temp_dict)
 
 
     return filters, multi_filter_runtime
+
+ 
 
 
 # process input from webcam or video file
