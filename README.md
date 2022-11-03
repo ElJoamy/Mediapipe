@@ -68,14 +68,12 @@
     We must install python on our computer, preferably the latest version of python.
     https://www.python.org/downloads/
 
-    ![image](https://user-images.githubusercontent.com/68487005/146847869-57168d23-1423-47af-be04-c08530c43c2f.png)
 
 ## Install an IDE
     In this case we will use Visual Studio Code  
     https://code.visualstudio.com/download
 
     once installed we must add the python extensions in VSC
-    ![image](https://user-images.githubusercontent.com/68487005/146848104-801fae20-a7ec-442a-8754-5b1866b5b7d4.png)
 
 ## Usage
     To run the project you must open the terminal and run the following command:
