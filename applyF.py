@@ -1,6 +1,4 @@
 import datetime
-import os
-from tkinter import Image
 import mediapipe as mp
 import cv2
 import math
@@ -167,6 +165,7 @@ def load_filter(filter_name = "dog" or "cat"):
 
         multi_filter_runtime.append(temp_dict)
 
+
     return filters, multi_filter_runtime
 
 
@@ -180,7 +179,6 @@ sigma = 50
 
 iter_filter_keys = iter(filters_config.keys())
 filters, multi_filter_runtime = load_filter(next(iter_filter_keys))
-
 
 
 # The main loop
@@ -297,11 +295,10 @@ while True:
 
             frame = output = np.uint8(output)
 
+
         cv2.putText(frame, "Press F to change filters", (10, 20), cv2.FONT_HERSHEY_SIMPLEX, .5, (255, 0, 0), 1)
         #press space to save the image
         cv2.putText(frame, "Press Space to save the image", (10, 40), cv2.FONT_HERSHEY_SIMPLEX, .5, (255, 0, 0), 1)
-        #Open your mouth to take a selfie
-        cv2.putText(frame, "Open your mouth to take a selfie", (10, 60), cv2.FONT_HERSHEY_SIMPLEX, .5, (255, 0, 0), 1)
 
         cv2.imshow("Face Filter", output)
 
@@ -327,21 +324,7 @@ while True:
             
         count += 1
 
-#Do a function that detects if the mouth is open or not to take a selfie
-def mouth_open(frame, points):
-    #mouth points
-    mouth_points = [points[48], points[54]]
-    #distance between the points
-    distance = math.sqrt((mouth_points[0][0] - mouth_points[1][0]) ** 2 + (mouth_points[0][1] - mouth_points[1][1]) ** 2)
-    #print(distance)
-    #if the distance is greater than 30, the mouth is open and take a selfie
-    if distance > 30:
-        #save image in the folder Screenshots 
-        cv2.imwrite("Screenshots/selfie/{}.png".format(datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")), frame)
-        print("Image saved")
-        return True
-    else:
-        return False
+
 
 cap.release()
 cv2.destroyAllWindows()
